@@ -2,7 +2,7 @@ const express = require('express');
 require('dotenv').config()
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 app.get('/', (_, res) => {
     return res.json({
@@ -11,6 +11,6 @@ app.get('/', (_, res) => {
     })
 })
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
     console.log(`Escuchando en el puerto ${PORT}`)
 })
