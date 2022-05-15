@@ -11,6 +11,6 @@ app.get('/', (_, res) => {
     })
 })
 
-app.listen(PORT, () => {
+app.listen(5000, () => {
     console.log(`Escuchando en el puerto ${PORT}`)
 })
