@@ -11,6 +11,12 @@ app.get('/', (_, res) => {
     })
 })
 
+app.get('/contacto', (_, res) => {
+    return res.send(
+        "<h1>Hola mundo</h1>"
+    )
+})
+
 app.listen(PORT, () => {
     console.log(`Escuchando en el puerto ${PORT}`)
 })
