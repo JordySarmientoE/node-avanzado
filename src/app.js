@@ -1,19 +1,21 @@
 const express = require('express');
+const connection = require('./config/database')
 require('dotenv').config()
+const userModel = require('./models/users')
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.get('/', (_, res) => {
-    return res.json({
-        nombre: "Jordy Sarmiento",
-        correo: "jordysarmiento@gmail.com"
-    })
+connection();
+
+app.get('/', async (_, res) => {
+    const users = await userModel.find();
+    return res.json({ users })
 })
 
 app.get('/contacto', (_, res) => {
     return res.send(
-        "<h1>Hola mundo</h1>"
+        "<h1>Hola mundo, nuevo</h1>"
     )
 })
 
